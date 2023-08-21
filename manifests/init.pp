@@ -37,6 +37,7 @@
 #   Note that the `cupsd.conf` directive `Port 631` is equivalent to `Listen *:631`.
 #   *Warning*: For this module to work, it is *mandatory* that CUPS is listening on `localhost:631`.
 # @param location Sets the access control lists for the CUPS web interface. Restricts access to localhost by default.
+# @param media Sets the default papersize for the printer. Restricts access to localhost by default.
 # @param log_debug_history Sets the `LogDebugHistory` directive of the CUPS server.
 # @param log_level Sets the `LogLevel` directive of the CUPS server.
 # @param log_time_format Sets the `LogTimeFormat` directive of the CUPS server.
