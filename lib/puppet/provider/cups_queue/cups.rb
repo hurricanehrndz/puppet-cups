@@ -200,6 +200,7 @@ Puppet::Type.type(:cups_queue).provide(:cups) do
     options_should.each do |key, value|
       if key == 'PageSize'
         key = 'media'
+      end
       lpadmin('-p', name, '-o', "#{key}=#{value}")
     end
   end
