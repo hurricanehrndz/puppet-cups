@@ -250,6 +250,7 @@ Puppet::Type.newtype(:cups_queue) do
         'printer-info' => 'description',
         'printer-state' => 'enabled',
         'printer-location' => 'location',
+        'media-default' => 'media',
         'printer-is-shared' => 'shared',
         'device-uri' => 'uri'
       }

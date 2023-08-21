@@ -707,6 +707,15 @@ RSpec.describe "Type 'cups_queue'" do
       end
     end
 
+    describe 'media' do
+      it { is_expected.to have_documentation }
+
+      it 'accepts a string' do
+        resource[:media] = 'This is a string'
+        expect(resource[:media]).to eq('This is a string')
+      end
+    end
+
     describe 'make_and_model' do
       it { is_expected.to have_documentation }
 
