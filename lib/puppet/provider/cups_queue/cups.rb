@@ -130,6 +130,14 @@ Puppet::Type.type(:cups_queue).provide(:cups) do
     lpadmin('-p', name, '-u', "#{value['policy']}:#{value['users'].join(',')}")
   end
 
+  def media
+    query('media-default')
+  end
+
+  def media=(value)
+    lpadmin('-p', name, '-o', "media-default=#{value}")
+  end
+
   def description
     query('printer-info')
   end
@@ -198,9 +206,6 @@ Puppet::Type.type(:cups_queue).provide(:cups) do
 
   def options=(options_should)
     options_should.each do |key, value|
-      if key == 'PageSize'
-        key = 'media'
-      end
       lpadmin('-p', name, '-o', "#{key}=#{value}")
     end
   end
