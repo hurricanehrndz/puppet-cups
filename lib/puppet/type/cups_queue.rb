@@ -190,6 +190,14 @@ Puppet::Type.newtype(:cups_queue) do
     end
   end
 
+  newproperty(:media) do
+    desc 'Default PagesSize to use i.e. "na_letter_8.5x11in"'
+
+    validate do |value|
+      raise ArgumentError, "The 'media' must be a string." unless value.is_a? String
+    end
+  end
+
   newproperty(:make_and_model) do
     desc "(printer-only) This value is used for driver updates and changes.
       Matches the `NickName` (fallback `ModelName`) value from the printer's PPD file
