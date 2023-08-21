@@ -311,6 +311,24 @@ RSpec.describe "Provider 'cups' for type 'cups_queue'" do
       end
     end
 
+    describe '#media' do
+      it 'calls #query with the correct parameter' do
+        allow(provider).to receive(:query).with('media-default').with('media-default').and_return('na_letter_8.5x11in')
+
+        expect(provider.media).to eq('na_letter_8.5x11in')
+      end
+    end
+
+    describe '#media=' do
+      it 'calls #lpadmin with the correct arguments' do
+        allow(provider).to receive(:lpadmin)
+
+        provider.media = 'na_letter_8.5x11in'
+
+        expect(provider).to have_received(:lpadmin).with('-p', 'Office', '-o', 'media-default=na_letter_8.5x11in')
+      end
+    end
+
     describe '#enabled' do
       context 'when the printer is idle' do
         it "returns 'true'" do

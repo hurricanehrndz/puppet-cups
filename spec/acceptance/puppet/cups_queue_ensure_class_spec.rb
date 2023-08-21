@@ -48,6 +48,7 @@ RSpec.describe 'Custom type `cups_queue`' do
                 access         => { 'policy' => 'allow', 'users' => ['root'] },
                 accepting      => true,
                 description    => 'A full-fledged queue',
+                media          => 'na_letter_8.5x11in',
                 enabled        => true,
                 held           => true,
                 location       => 'Room 101',
