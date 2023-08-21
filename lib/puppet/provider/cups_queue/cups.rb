@@ -74,7 +74,7 @@ Puppet::Type.type(:cups_queue).provide(:cups) do
 
     run_property_setter(:uri,
                         :access, :description, :location, :options, :shared,
-                        :enabled, :held, :accepting: :media)
+                        :enabled, :held, :accepting:, :media)
 
     check_make_and_model
   end
